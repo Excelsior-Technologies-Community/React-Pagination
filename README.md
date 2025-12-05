@@ -1,210 +1,113 @@
-# 📦 React Pagination & Infinite Scroll Project
+1.Login Page
+![alt text](<Screenshot 2025-12-04 192229.png>) 
+![alt text](<Screenshot 2025-12-04 192241.png>)
 
-A full-stack MERN project featuring:
+2.Register Page
+![alt text](<Screenshot 2025-12-04 192204.png>) 
+![alt text](<Screenshot 2025-12-04 192146.png>)
 
--   ✅ Pagination
--   ✅ Infinite Scroll
--   ✅ Large dataset handling
--   ✅ API-based data fetching
--   ✅ MongoDB storage + seeder API
+React Notification System (Toast + Alerts + Async Notifications)
 
-------------------------------------------------------------------------
+A fully functional React project to show:
 
-## 🖼 Project Screenshots
+🔔 Toast Notifications
 
-<img width="906" height="549" alt="Screenshot 2025-12-04 194827" src="https://github.com/user-attachments/assets/4b07a508-4ab6-469c-bb7a-52022bcd2d44" />
+⚠️ Alert Messages
 
-<img width="1139" height="826" alt="Screenshot 2025-12-04 194810" src="https://github.com/user-attachments/assets/b6a9bd89-84ed-4e5c-926a-1a731f1476e2" />
+🔄 Async Notifications (Loading → Success → Error)
 
+🌐 Real API example (Login / Register)
 
-------------------------------------------------------------------------
+👤 Authentication
 
-## 🚀 Project Features
+User Registration API
+User Login API
+Bcrypt password hashing
+JSON Web Tokens (JWT)
 
-### **Frontend (React + Vite)**
+This project helps you notify users when:
 
--   Pagination (Next, Previous, Page Numbers)\
--   Infinite Scroll (auto-load on scroll bottom)\
--   Toast notifications\
--   Product listing UI (CSS included)\
--   API integration for paginated data\
--   Axios for API calls
+.API is loading
 
-### **Backend (Node + Express + MongoDB)**
+.Action is successful
 
--   REST API with pagination\
--   MongoDB connection via Mongoose\
--   Product model + controller\
--   Seeder API to insert dummy products\
--   CORS enabled\
--   ES Module structure (import/export)
+.Something goes wrong
 
-------------------------------------------------------------------------
+.You want to show warnings
 
-## 📁 Folder Structure
+frontend/
+│── src/
+│   ├── components/
+│   │   ├── LoadingButton.jsx
+│   │ 
+│   │   
+│   ├── pages/
+│   │   ├── LoginPage.jsx
+│   │   └── Register.jsx
+│   │  
+│   ├── App.jsx
+│   └── main.jsx
+│── index.html
+│── package.json
+│── vite.config.js
 
-### **Frontend**
-
-    frontend/
+backend/
     ├── src/
-    │   ├── components/
-    │   │   └── InfinateScrollList.jsx
-    │   ├── pages/
-    │   │   └── Home.jsx
-    │   ├── api/
-    │   │   └── api.js
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── style.css
-    ├── package.json
-    └── vite.config.js
-
-### **Backend**
-
-    backend/
-    ├── config/
-    │   └── db.js
-    ├── controllers/
-    │   ├── productController.js
-    │   └── swddController.js
-    ├── models/
-    │   └── productModel.js
-    ├── routes/
-    │   └── productRoute.js
-    ├── seeder/
-    │   └── seedProducts.js
-    ├── app.js
+    │   ├── Dumy data/
+    │   │   └── ReactPagination.products.json  <-- 📌 Dummy product data used for seeding is located here.
+    │   ├── config/
+    │   │   └── db.js
+    │   ├── controllers/
+    │   │   ├── productController.js
+    │   │   └── seddController.js
+    │   ├── models/
+    │   │   └── productModel.js
+    │   ├── routes/
+    │   │   └── productRoute.js
+    │   ├── seeder/
+    │   │   └── seedProducts.js
+    │   ├── app.js
+    │   └── package.json
+    ├── .env
     └── package.json
 
-------------------------------------------------------------------------
+🛠️ Tech Stack
+Frontend
 
-## ⚙️ Installation Guide
+React + Vite
+-Axios
+-Custom Toast Component
 
-### **1️⃣ Clone the Project**
+Backend
 
-    cd frontend
-    npm run dev
+-Node.js
+-Express.js
+-MongoDB
+-Mongoose
+-bcrypt
+-JWT authentication
 
-------------------------------------------------------------------------
+Backend Setup
+1️⃣ Install Dependencies
+cd backend
+npm init
+npm run dev
 
-## 🖥️ Backend Setup
+2️⃣ Setup Environment File
 
-### **2️⃣ Install Dependencies**
+Create .env
 
-    cd backend
-    npm install
+PORT=5000
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
 
-### **3️⃣ Add MongoDB URL**
+3️⃣ Start Server
+npm run dev
 
-Create a file:
+🖥️ Frontend Setup
+1️⃣ Install Dependencies
+cd frontend
+npm install
 
-    backend/.env
-
-Add:
-
-    MONGO_URI=mongodb://localhost:27017/ReactPagination
-    PORT=5000
-    JWT_SECRET=RG735950
-
-### **4️⃣ Start Backend**
-
-    npm run dev
-
-------------------------------------------------------------------------
-
-## 🌱 Insert Dummy Data into MongoDB
-
-Seeder API:
-
-    GET /api/products/seed
-
-Example in browser:
-
-    http://localhost:5000/api/products/seed
-
-This inserts **200 sample products**.
-
-------------------------------------------------------------------------
-
-## 🔌 API Endpoints
-
-### **Get Paginated Products**
-
-    GET http://localhost:5000/api/products?page=1&limit=20
-
-### **Response Example**
-
-    {
-      "page": 1,
-      "limit": 20,
-      "total": 200,
-      "totalPages": 10,
-      "products": [
-        {
-          "_id": "69316abda0a6d7346156b34d",
-          "title": "Product 1",
-          "description": "This is product number 1",
-          "price": 118
-        },
-        ...
-      ]
-    }
-
-------------------------------------------------------------------------
-
-## ⚡ Infinite Scroll Logic (Frontend)
-
-Uses **IntersectionObserver**:
-
-``` js
-const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    loadMore();
-  }
-});
-```
-
-------------------------------------------------------------------------
-
-## 📝 Scripts
-
-### **Backend**
-
-``` json
-"scripts": {
-  "start": "node server.js",
-  "dev": "nodemon server.js"
-}
-```
-
-### **Frontend**
-
-``` json
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-}
-```
-
-------------------------------------------------------------------------
-
-## 📦 Technologies Used
-
-### **Frontend**
-
--   React (Vite)
--   Axios
--   CSS
-
-### **Backend**
-
--   Node.js + Express\
--   MongoDB + Mongoose\
--   Nodemon\
--   CORS\
--   dotenv
-
-------------------------------------------------------------------------
-
-## 🎉 Enjoy building with Pagination + Infinite Scroll!
+2️⃣ Start React App
+npm run dev
