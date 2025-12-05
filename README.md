@@ -52,24 +52,19 @@ frontend/
 │── vite.config.js
 
 backend/
-    ├── src/
-    │   ├── Dumy data/
-    │   │   └── ReactPagination.products.json  <-- 📌 Dummy product data used for seeding is located here.
-    │   ├── config/
-    │   │   └── db.js
-    │   ├── controllers/
-    │   │   ├── productController.js
-    │   │   └── seddController.js
-    │   ├── models/
-    │   │   └── productModel.js
-    │   ├── routes/
-    │   │   └── productRoute.js
-    │   ├── seeder/
-    │   │   └── seedProducts.js
-    │   ├── app.js
-    │   └── package.json
-    ├── .env
-    └── package.json
+│── controllers/
+│   ├── authController.js
+│── models/
+│   ├── userModel.js
+│── routes/
+│   ├── authRoutes.js
+│── config/
+│   ├── db.js
+│── middleware/
+│   ├── authMiddleware.js
+│── app.js
+│── .env
+│── package.json
 
 🛠️ Tech Stack
 Frontend
