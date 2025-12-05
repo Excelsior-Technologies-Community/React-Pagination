@@ -61,8 +61,8 @@ A full-stack MERN project featuring:
 
 ### **Backend**
 
-    backend/
-├── package.json        # Node.js dependencies & scripts
+backend/
+├── package.json      # Node.js dependencies & scripts
 ├── .env                # Environment variables
 └── src/
     ├── config/         # Database configuration (db.js)
