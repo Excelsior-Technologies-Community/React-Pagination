@@ -12,7 +12,11 @@ A full-stack MERN project featuring:
 
 ## 🖼 Project Screenshots
 
+1. Pagination
+   
 <img width="1139" height="826" alt="Screenshot 2025-12-04 194810" src="https://github.com/user-attachments/assets/12417e5d-9c35-4160-94fd-81e454b61669" />
+
+2.Infinite Scroll
 
 <img width="1139" height="826" alt="Screenshot 2025-12-04 194810" src="https://github.com/user-attachments/assets/36c7e527-7820-4541-8a0e-aeb1b755d035" />
 
